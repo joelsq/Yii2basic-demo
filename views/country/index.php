@@ -69,7 +69,9 @@ foreach ($countrys as $v) {
 						<td><?php echo $v->chinesename;?></td>
 						<td><a href="<?= Url::to([ 'view', 'id'=>$v->code]); ?>">查看 </a> <a
 							href="<?= Url::to([ 'update', 'id'=>$v->code]); ?>">编辑 </a>
-					
+							<?= Html::a('删除', ['delete', 'id' => $v->code], 
+							    ['data' => ['confirm' => '你确定要删除该项?',
+							        'method' => 'post',],]) ?>			
 					</tr>
 <?php $index++; } ?>
                 </tbody>
